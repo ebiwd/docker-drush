@@ -6,6 +6,6 @@ RUN apk add --update curl git rsync wget zip \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-RUN composer require drush/drush:8
+RUN composer require drush/drush:8 && ln -s /vendor/bin/drush /usr/bin/drush
 
 CMD ["/bin/sh"]
