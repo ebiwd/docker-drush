@@ -1,11 +1,8 @@
 FROM alpine
 
-RUN apk add --update curl git rsync wget zip \
-  php5 php5-ctype php5-curl php5-dom php5-json php5-openssl php5-mysqli php5-phar php5-sqlite3 php5-zlib \
+RUN apk add --update curl git rsync wget zip php7 php7-ctype php7-curl php7-dom php7-json php7-openssl php7-mysqli php7-phar php7-sqlite3 php7-zlib \
   && rm /var/cache/apk/*
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
-
-RUN composer require drush/drush:8
+  && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+  && composer require drush/drush:8
 
 CMD ["/bin/sh"]
