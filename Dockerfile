@@ -14,6 +14,9 @@ RUN apk add --update \
     php7-json \
     php7-mbstring \
     php7-openssl \
+    php7-pcntl \
+    php7-pdo_sqlite \
+    php7-posix \
     php7-mysqli \
     php7-phar \
     php7-sqlite3 \
