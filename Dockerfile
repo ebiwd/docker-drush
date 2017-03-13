@@ -3,6 +3,7 @@ FROM alpine
 RUN apk add --update \
     curl \
     git \
+    mysql-client \
     openssh \
     rsync \
     wget \
