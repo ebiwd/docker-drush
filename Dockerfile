@@ -25,7 +25,7 @@ RUN apk add --update \
   && rm /var/cache/apk/* \
   && ln -s /usr/bin/php7 /usr/bin/php \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
-  && composer require drush/drush:8 \
+  && composer require drush/drush:8.1.10 \
   && ln -s /vendor/bin/drush /usr/bin/drush
 
 CMD ["/bin/sh"]
