@@ -25,7 +25,7 @@ RUN apk add --update \
   && rm /var/cache/apk/* \
   && mkdir -p ~/.ssh \
   && echo -e "Host *\n\tIdentityFile ~/.ssh/%r\n\tStrictHostKeyChecking no" >> ~/.ssh/config \
-  && echo -e "#!/bin/sh\necho -e \"$2\" > ~/.ssh/$1 && chmod 400 ~/.ssh/$1" > ~/bin/add-ssh-key && chmod +x ~/bin/add-ssh-key \
+  && echo -e "#!/bin/sh\necho -e \"$2\" > ~/.ssh/$1 && chmod 400 ~/.ssh/$1" > /usr/bin/add-ssh-key && chmod +x /usr/bin/add-ssh-key \
   && ln -s /usr/bin/php7 /usr/bin/php \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
   && composer require drush/drush:8.1.10 \
