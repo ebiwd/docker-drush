@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -z "${2}" ] && echo "Usage: $0 <user> <key>" && exit 1
+
+mkdir -p ~/.ssh
+echo -e \"$2\" > ~/.ssh/$1 && chmod 400 ~/.ssh/$1
