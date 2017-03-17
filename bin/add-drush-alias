@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -z "${6}" ] && echo "Usage $0 <alias> <uri> <root> <remote-host> <remote-user> <drush-script>" && exit 1
+[ -z "${8}" ] && echo "Usage $0 <alias> <uri> <root> <remote-host> <remote-user> <drush-script> <files> <temp>" && exit 1
 
 mkdir -p ~/.drush
 echo "<?php 
@@ -11,5 +11,7 @@ echo "<?php
     'remote-user'=>'${5}',
     'path-aliases'=>array(
       '%drush-script'=>'${6}'
+      '%files'=>'${7}'
+      '%temp'=>'${8}'
     )
   );" > ~/.drush/$1.alias.drushrc.php
