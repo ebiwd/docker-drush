@@ -10,8 +10,8 @@ echo "<?php
     'remote-host'=>'${4}',
     'remote-user'=>'${5}',
     'path-aliases'=>array(
-      '%drush-script'=>'${6}'
-      '%files'=>'${7}'
-      '%temp'=>'${8}'
-    )
+      '%drush-script'=>'${6}',
+      '%files'=>'${7}',
+      '%temp'=>'${8}',
+    ),
   );" > ~/.drush/$1.alias.drushrc.php
