@@ -1,5 +1,0 @@
-#!/bin/sh
-
-[ -z "${1}" ] && echo "Usage: $0 <domain>" && exit 1
-
-echo "search ${1}" >> /etc/resolv.conf

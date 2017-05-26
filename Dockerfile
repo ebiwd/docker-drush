@@ -1,11 +1,13 @@
-FROM alpine
+FROM ebiwd/alpine-ssh
+
+LABEL maintainer www-dev@ebi.ac.uk
+
+ARG DRUSHVER=8.1.11
 
 RUN apk add --update \
     curl \
     git \
     mysql-client \
-    openssh \
-    rsync \
     wget \
     zip \
     php7 \
@@ -23,12 +25,13 @@ RUN apk add --update \
     php7-sqlite3 \
     php7-zlib \
   && rm /var/cache/apk/* \
-  && ln -s /usr/bin/php7 /usr/bin/php \
-  && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
-  && composer require drush/drush:8.1.10 \
+  && ln -s /usr/bin/php7 /usr/bin/php
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+RUN composer require drush/drush:${DRUSHVER} \
   && ln -s /vendor/bin/drush /usr/bin/drush
 
-COPY bin/* /usr/local/bin/
-COPY .ssh/config /root/.ssh/config
+COPY files /
 
-CMD ["/bin/sh"]
+WORKDIR /workspace
