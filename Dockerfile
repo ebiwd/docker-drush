@@ -1,10 +1,10 @@
-FROM ebiwd/alpine-ssh:latest
+FROM ebiwd/alpine-ssh:3.6
 
 LABEL maintainer www-dev@ebi.ac.uk
 
 ARG DRUSHVER=8.1.11
 
-RUN apk add --update \
+RUN apk add --no-cache \
     curl \
     git \
     mysql-client \
@@ -23,8 +23,8 @@ RUN apk add --update \
     php7-mysqli \
     php7-phar \
     php7-sqlite3 \
-    php7-zlib \
-  && rm /var/cache/apk/*
+    php7-tokenizer \
+    php7-zlib
 
 RUN ln -svf /usr/bin/php7 /usr/bin/php
 
