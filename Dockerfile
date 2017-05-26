@@ -1,4 +1,4 @@
-FROM ebiwd/alpine-ssh
+FROM ebiwd/alpine-ssh:latest
 
 LABEL maintainer www-dev@ebi.ac.uk
 
@@ -23,9 +23,10 @@ RUN apk add --update \
     php7-mysqli \
     php7-phar \
     php7-sqlite3 \
-    php7-zlib \
-  && rm /var/cache/apk/* \
-  && ln -s /usr/bin/php7 /usr/bin/php
+    php7-zlib
+
+RUN ln -sf /usr/bin/php7 /usr/bin/php \
+  && rm /var/cache/apk/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
