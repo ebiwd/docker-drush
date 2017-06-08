@@ -22,6 +22,7 @@ RUN apk add --no-cache \
     php7-posix \
     php7-mysqli \
     php7-phar \
+    php7-simplexml \
     php7-sqlite3 \
     php7-tokenizer \
     php7-zlib
