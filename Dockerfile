@@ -32,7 +32,7 @@ RUN ln -svf /usr/bin/php7 /usr/bin/php
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 RUN composer global require drush/drush:${DRUSHVER} \
-  && ln -s /root/vendor/bin/drush /usr/bin/drush
+  && ln -s /root/.composer/vendor/bin/drush /usr/bin/drush
 
 COPY files /
 
