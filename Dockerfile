@@ -2,7 +2,7 @@ FROM ebiwd/alpine-ssh:3.6
 
 LABEL maintainer www-dev@ebi.ac.uk
 
-ARG DRUSHVER=8.1.11
+ARG DRUSHVER=8.1.12
 
 RUN apk add --no-cache \
     curl \
