@@ -18,6 +18,7 @@ RUN apk add --no-cache \
     php7-gd \
     php7-json \
     php7-mbstring \
+    php7-mcrypt \
     php7-mysqli \
     php7-openssl \
     php7-pcntl \
