@@ -8,6 +8,7 @@ RUN apk add --no-cache \
     curl \
     git \
     mysql-client \
+    patch \
     wget \
     zip \
     php7 \
