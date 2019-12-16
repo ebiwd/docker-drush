@@ -35,6 +35,7 @@ RUN apk add --no-cache \
     php7-zlib
 
 RUN ln -svf /usr/bin/php7 /usr/bin/php
+RUN echo 'memory_limit = 512M' >> /etc/php7/conf.d/docker-php-memlimit.ini;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
