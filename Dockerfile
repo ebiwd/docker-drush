@@ -11,6 +11,7 @@ RUN apk add --no-cache \
     patch \
     wget \
     zip \
+    jq \
     php7 \
     php7-ctype \
     php7-curl \
