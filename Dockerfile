@@ -1,4 +1,4 @@
-FROM ebiwd/alpine-ssh:3.6
+FROM ebiwd/alpine-ssh:3.13
 
 LABEL maintainer www-dev@ebi.ac.uk
 
