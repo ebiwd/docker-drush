@@ -33,7 +33,10 @@ RUN apk add --no-cache \
     php7-tokenizer \
     php7-xml \
     php7-xmlwriter \
-    php7-zlib
+    php7-xmlreader \
+    php7-zlib \
+    php7-zip \
+    php7-iconv
 
 RUN ln -svf /usr/bin/php7 /usr/bin/php
 RUN echo 'memory_limit = -1' >> /etc/php7/conf.d/docker-php-memlimit.ini;
