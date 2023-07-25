@@ -1,9 +1,10 @@
-FROM ebiwd/alpine-ssh:3.13
+FROM ebiwd/alpine-ssh:3.18
 
 LABEL maintainer www-dev@ebi.ac.uk
 
-ARG DRUSHVER=8.1.17
+ARG DRUSHVER=11.6.0
 
+ # Installing PHP
 RUN apk add --no-cache \
     curl \
     git \
@@ -12,34 +13,33 @@ RUN apk add --no-cache \
     wget \
     zip \
     jq \
-    php7 \
-    php7-ctype \
-    php7-curl \
-    php7-dom \
-    php7-fileinfo \
-    php7-gd \
-    php7-json \
-    php7-mbstring \
-    php7-mcrypt \
-    php7-mysqli \
-    php7-openssl \
-    php7-pcntl \
-    php7-pdo_sqlite \
-    php7-posix \
-    php7-phar \
-    php7-session \
-    php7-simplexml \
-    php7-sqlite3 \
-    php7-tokenizer \
-    php7-xml \
-    php7-xmlwriter \
-    php7-xmlreader \
-    php7-zlib \
-    php7-zip \
-    php7-iconv
+    php82 \
+    php82-common \
+    php82-fpm \
+    php82-pdo \
+    php82-opcache \
+    php82-zip \
+    php82-phar \
+    php82-iconv \
+    php82-cli \
+    php82-curl \
+    php82-openssl \
+    php82-mbstring \
+    php82-tokenizer \
+    php82-fileinfo \
+    php82-json \
+    php82-xml \
+    php82-xmlwriter \
+    php82-simplexml \
+    php82-dom \
+    php82-pdo_mysql \
+    php82-pdo_sqlite \
+    php82-tokenizer \
+    php82-pecl-redis
 
-RUN ln -svf /usr/bin/php7 /usr/bin/php
-RUN echo 'memory_limit = -1' >> /etc/php7/conf.d/docker-php-memlimit.ini;
+RUN ln -svf /usr/bin/php82 /usr/bin/php
+
+RUN echo 'memory_limit = -1' >> /etc/php82/conf.d/docker-php-memlimit.ini;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
