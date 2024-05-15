@@ -17,6 +17,7 @@ RUN apk add --no-cache \
     php82-common \
     php82-fpm \
     php82-pdo \
+    php82-gd \
     php82-opcache \
     php82-zip \
     php82-phar \
@@ -35,7 +36,11 @@ RUN apk add --no-cache \
     php82-pdo_mysql \
     php82-pdo_sqlite \
     php82-tokenizer \
-    php82-pecl-redis
+    php82-xmlreader \
+    php82-zlib \
+    php82-iconv \
+    php82-pecl-redis \
+    php82-ctype
 
 RUN ln -svf /usr/bin/php82 /usr/bin/php
 
