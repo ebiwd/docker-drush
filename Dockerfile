@@ -1,6 +1,6 @@
-FROM ebiwd/alpine-ssh:3.18
+FROM ebiwd/alpine-ssh:3.20
 
-LABEL maintainer www-dev@ebi.ac.uk
+LABEL maintainer="es-wwwdev@ebi.ac.uk"
 
 ARG DRUSHVER=11.6.0
 
@@ -13,38 +13,38 @@ RUN apk add --no-cache \
     wget \
     zip \
     jq \
-    php82 \
-    php82-common \
-    php82-fpm \
-    php82-pdo \
-    php82-gd \
-    php82-opcache \
-    php82-zip \
-    php82-phar \
-    php82-iconv \
-    php82-cli \
-    php82-curl \
-    php82-openssl \
-    php82-mbstring \
-    php82-tokenizer \
-    php82-fileinfo \
-    php82-json \
-    php82-xml \
-    php82-xmlwriter \
-    php82-simplexml \
-    php82-dom \
-    php82-pdo_mysql \
-    php82-pdo_sqlite \
-    php82-tokenizer \
-    php82-xmlreader \
-    php82-zlib \
-    php82-iconv \
-    php82-pecl-redis \
-    php82-ctype
+    php83 \
+    php83-common \
+    php83-fpm \
+    php83-pdo \
+    php83-gd \
+    php83-opcache \
+    php83-zip \
+    php83-phar \
+    php83-iconv \
+    php83-cli \
+    php83-curl \
+    php83-openssl \
+    php83-mbstring \
+    php83-tokenizer \
+    php83-fileinfo \
+    php83-json \
+    php83-xml \
+    php83-xmlwriter \
+    php83-simplexml \
+    php83-dom \
+    php83-pdo_mysql \
+    php83-pdo_sqlite \
+    php83-tokenizer \
+    php83-xmlreader \
+    php83-zlib \
+    php83-iconv \
+    php83-pecl-redis \
+    php83-ctype
 
-RUN ln -svf /usr/bin/php82 /usr/bin/php
+RUN ln -svf /usr/bin/php83 /usr/bin/php
 
-RUN echo 'memory_limit = -1' >> /etc/php82/conf.d/docker-php-memlimit.ini;
+RUN echo 'memory_limit = -1' >> /etc/php83/conf.d/docker-php-memlimit.ini;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
