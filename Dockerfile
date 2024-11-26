@@ -2,7 +2,7 @@ FROM ebiwd/alpine-ssh:3.20
 
 LABEL maintainer="es-wwwdev@ebi.ac.uk"
 
-ARG DRUSHVER=11.6.0
+ARG DRUSHVER=13.3.3
 
  # Installing PHP
 RUN apk add --no-cache \
@@ -48,8 +48,10 @@ RUN echo 'memory_limit = -1' >> /etc/php83/conf.d/docker-php-memlimit.ini;
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-RUN composer global require drush/drush:${DRUSHVER} \
-  && ln -s /root/.composer/vendor/bin/drush /usr/bin/drush
+RUN composer global require drush/drush:dev-master --with-all-dependencies \
+  && ln -s /root/.composer/vendor/bin/drush /usr/bin/drush \
+  && export PATH="$HOME/.config/composer/vendor/bin:$PATH" \
+  && composer global require drush/drush:${DRUSHVER} --with-all-dependencies
 
 COPY files /
 
